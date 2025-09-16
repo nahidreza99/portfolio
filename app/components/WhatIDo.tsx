@@ -112,7 +112,7 @@ const WhatIDo = () => {
             strategic vision.
           </p>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-            With over 5 years of experience building scalable applications for
+            With over 3 years of experience building scalable applications for
             startups and enterprises, I provide comprehensive services across
             the entire software development lifecycle.
           </p>
