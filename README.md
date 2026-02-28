@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+**Portfolio:** Add `resume.pdf` to the `public/` folder so the "Download Resume" button works. Update `siteUrl` in `app/layout.tsx` to your production URL for correct Open Graph links.
+
 ## Getting Started
 
 First, run the development server:

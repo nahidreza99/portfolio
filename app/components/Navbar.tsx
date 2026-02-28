@@ -1,11 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+
+const navSections = [
+  { id: "whatido", label: "what i do" },
+  { id: "skills", label: "skills" },
+  { id: "experience", label: "experience" },
+  { id: "projects", label: "projects" },
+  { id: "work", label: "work" },
+  { id: "publications", label: "publications" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,22 +47,27 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link
-          to="hero"
-          spy={true}
-          smooth={true}
-          duration={500}
+        <NextLink
+          href="/"
           className="font-mono font-bold text-xl cursor-pointer"
         >
           NR
-        </Link>
+        </NextLink>
 
         <div className="hidden md:flex space-x-8">
-          {["whatido", "skills", "experience", "projects", "publications"].map(
-            (item) => (
-              <Link
-                key={item}
-                to={item}
+          {navSections.map((item) =>
+            item.id === "work" && !isHome ? (
+              <NextLink
+                key={item.id}
+                href="/work"
+                className="text-sm uppercase tracking-wider hover:text-gray-300 transition-colors"
+              >
+                {item.label}
+              </NextLink>
+            ) : isHome ? (
+              <ScrollLink
+                key={item.id}
+                to={item.id}
                 spy={true}
                 smooth={true}
                 offset={-80}
@@ -57,22 +75,39 @@ const Navbar = () => {
                 className="text-sm uppercase tracking-wider hover:text-gray-300 cursor-pointer transition-colors"
                 activeClass="font-bold"
               >
-                {item === "whatido" ? "what i do" : item}
-              </Link>
+                {item.label}
+              </ScrollLink>
+            ) : (
+              <NextLink
+                key={item.id}
+                href={`/#${item.id}`}
+                className="text-sm uppercase tracking-wider hover:text-gray-300 transition-colors"
+              >
+                {item.label}
+              </NextLink>
             )
           )}
         </div>
 
-        <Link
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-          className="px-5 py-2 border border-white/30 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-        >
-          Contact
-        </Link>
+        {isHome ? (
+          <ScrollLink
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="px-5 py-2 border border-white/30 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+          >
+            Contact
+          </ScrollLink>
+        ) : (
+          <NextLink
+            href="/#contact"
+            className="px-5 py-2 border border-white/30 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Contact
+          </NextLink>
+        )}
       </div>
     </motion.nav>
   );

@@ -44,10 +44,19 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.7 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-8"
+            className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-4"
           >
             I design and scale web & mobile applications with Django, FastAPI,
             Next.js, and Kubernetes.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.7 }}
+            className="text-lg md:text-xl text-gray-400 max-w-3xl mb-8"
+          >
+            Backend, frontend, and infrastructure—from API design to deployment
+            pipelines.
           </motion.p>
 
           <motion.div

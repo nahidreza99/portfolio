@@ -11,11 +11,15 @@ import {
 } from "react-icons/fa";
 import {
   SiDjango,
+  SiExpress,
   SiFastapi,
+  SiFirebase,
   SiNextdotjs,
   SiKubernetes,
   SiMongodb,
   SiPostgresql,
+  SiSupabase,
+  SiTerraform,
   SiTypescript,
   SiFlutter,
   SiGooglecloud,
@@ -59,8 +63,11 @@ const Skills = () => {
       category: "frontend",
     },
     { name: "Node.js", icon: <FaNodeJs size={42} />, category: "backend" },
+    { name: "Express.js", icon: <SiExpress size={42} />, category: "backend" },
     { name: "Django", icon: <SiDjango size={42} />, category: "backend" },
     { name: "FastAPI", icon: <SiFastapi size={42} />, category: "backend" },
+    { name: "Supabase", icon: <SiSupabase size={42} />, category: "backend" },
+    { name: "Firebase", icon: <SiFirebase size={42} />, category: "backend" },
     { name: "Flutter", icon: <SiFlutter size={42} />, category: "mobile" },
     {
       name: "PostgreSQL",
@@ -69,6 +76,11 @@ const Skills = () => {
     },
     { name: "MongoDB", icon: <SiMongodb size={42} />, category: "database" },
     { name: "Docker", icon: <FaDocker size={42} />, category: "devops" },
+    {
+      name: "Terraform",
+      icon: <SiTerraform size={42} />,
+      category: "devops",
+    },
     {
       name: "Kubernetes",
       icon: <SiKubernetes size={42} />,

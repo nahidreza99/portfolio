@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface ProjectItem {
   title: string;
@@ -16,9 +16,13 @@ interface ProjectItem {
   image?: string;
   github?: string;
   live?: string;
+  architecture?: string;
+  metrics?: string[];
 }
 
 const Projects = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,7 +55,14 @@ const Projects = () => {
       impact:
         "Achieved 100% uptime during deployments, improved developer experience, and provided customers with reliable hosting.",
       tech: ["AWS", "Express.js", "Next.js", "Kubernetes", "Docker", "Node.js"],
-      image: "/projects/storytelling.png",
+      image: "/projects/hosting_platform.png",
+      architecture:
+        "Next.js frontend and Express.js API layer; containerized with Docker and orchestrated on Kubernetes (AWS EKS). Blue/green deployment via separate environments with load balancer traffic switch after health checks.",
+      metrics: [
+        "100% uptime during deployments",
+        "Zero-downtime release strategy",
+        "Faster developer iteration with automated pipelines",
+      ],
     },
     {
       title: "AI-Powered Storytelling App",
@@ -71,7 +82,14 @@ const Projects = () => {
         "Docker",
         "NLP APIs",
       ],
-      image: "/projects/hosting_platform.png",
+      image: "/projects/storytelling.png",
+      architecture:
+        "Next.js and Strapi CMS for content; Express.js backend for auth and NLP integration. PostgreSQL for persistence; Docker for consistent dev and staging; CI/CD for automated deployments.",
+      metrics: [
+        "Custom stories generated in seconds",
+        "Higher engagement and reading habit metrics",
+        "Scalable backend for concurrent story generation",
+      ],
     },
   ];
 
@@ -86,7 +104,11 @@ const Projects = () => {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-          <div className="w-20 h-1 bg-white mb-8"></div>
+          <div className="w-20 h-1 bg-white mb-4"></div>
+          <p className="text-gray-400 max-w-2xl">
+            Selected work from professional engagements. Live demos and detailed
+            case studies available upon request.
+          </p>
         </motion.div>
 
         <div className="grid gap-20">
@@ -184,6 +206,74 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
+
+                  {(project.architecture || project.metrics?.length) && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setExpandedIndex(expandedIndex === idx ? null : idx)
+                        }
+                        className="mt-6 flex items-center gap-2 text-gray-300 hover:text-white transition-colors font-medium"
+                      >
+                        {expandedIndex === idx ? (
+                          <>
+                            <FaChevronUp size={16} />
+                            Hide case study
+                          </>
+                        ) : (
+                          <>
+                            <FaChevronDown size={16} />
+                            Read case study
+                          </>
+                        )}
+                      </button>
+                      <AnimatePresence>
+                        {expandedIndex === idx && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-6 pt-6 border-t border-zinc-700 space-y-6">
+                              {project.architecture && (
+                                <div>
+                                  <h4 className="text-lg font-semibold mb-2 text-gray-200">
+                                    Architecture
+                                  </h4>
+                                  <p className="text-gray-300">
+                                    {project.architecture}
+                                  </p>
+                                </div>
+                              )}
+                              {project.metrics && project.metrics.length > 0 && (
+                                <div>
+                                  <h4 className="text-lg font-semibold mb-2 text-gray-200">
+                                    Key metrics
+                                  </h4>
+                                  <ul className="space-y-2">
+                                    {project.metrics.map((metric, i) => (
+                                      <li
+                                        key={i}
+                                        className="flex items-start gap-2 text-gray-300"
+                                      >
+                                        <span className="text-gray-500 mt-1">
+                                          •
+                                        </span>
+                                        <span>{metric}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -14,9 +14,12 @@ const Footer = () => {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row justify-between items-center"
         >
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
             <p className="text-gray-400">
               &copy; {new Date().getFullYear()} Nahid Reza. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-sm mt-1">
+              Built with Next.js
             </p>
           </div>
 

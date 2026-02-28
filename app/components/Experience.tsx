@@ -62,7 +62,7 @@ const Experience = () => {
     {
       company: "MarketSwipe Ltd.",
       position: "Contract Based Developer",
-      period: "March 2025 - July 2025",
+      period: "March 2024 - July 2024",
       location: "Dhaka, Bangladesh",
       tech: "Next.js, Express.js, Strapi, PostgreSQL, Docker, Javascript",
       highlights: [
