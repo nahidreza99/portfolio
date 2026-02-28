@@ -10,19 +10,23 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { getAllWorks } from "./data/works";
+import { getAllProjects } from "./data/projects";
 
 export default async function Home() {
-  const works = await getAllWorks();
+  const [works, projects] = await Promise.all([
+    getAllWorks(),
+    getAllProjects(),
+  ]);
   return (
-    <main className="bg-black text-white">
+    <main className="text-white min-h-screen">
       <Navbar />
       <Hero />
       <WhatIDo />
-      <Skills />
       <Experience />
-      <Projects />
       <Work works={works} />
+      <Projects projects={projects} />
       <Publications />
+      <Skills />
       <Contact />
       <Footer />
       <ScrollToTop />

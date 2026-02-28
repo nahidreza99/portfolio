@@ -58,7 +58,7 @@ const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.7 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="p-6 bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors"
+              className="p-6 bg-zinc-900/80 rounded-lg hover:bg-zinc-800 transition-colors"
             >
               <h3 className="text-xl md:text-2xl font-bold mb-3">
                 {pub.title}

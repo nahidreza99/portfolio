@@ -11,7 +11,7 @@ tech:
   - AWS
   - Terraform
   - GitHub Actions
-year: "2024"
+year: "2025"
 thumbnail: /case_study/air_duct_cleaning/thumbnail.png
 client: Confidential
 ---

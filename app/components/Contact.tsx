@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 md:py-28 px-4 md:px-8 bg-zinc-900">
+    <section id="contact" className="py-20 md:py-28 px-4 md:px-8 bg-[#000613]">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const Contact = () => {
             <p className="text-gray-400">
               Or connect on{" "}
               <a
-                href="https://linkedin.com/in/nahidreza99"
+                href="https://www.linkedin.com/in/nahid-reza-953379209/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors underline decoration-gray-500 underline-offset-2 hover:decoration-white"
@@ -70,7 +70,7 @@ const Contact = () => {
               href="mailto:nahidreza99@gmail.com"
               className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group"
             >
-              <div className="w-12 h-12 bg-black flex items-center justify-center rounded-full group-hover:bg-zinc-800 transition-colors">
+              <div className="w-12 h-12 bg-zinc-900/80 flex items-center justify-center rounded-full group-hover:bg-zinc-800/80 transition-colors">
                 <FaEnvelope size={20} />
               </div>
               <div>
@@ -86,7 +86,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group"
             >
-              <div className="w-12 h-12 bg-black flex items-center justify-center rounded-full group-hover:bg-zinc-800 transition-colors">
+              <div className="w-12 h-12 bg-zinc-900/80 flex items-center justify-center rounded-full group-hover:bg-zinc-800/80 transition-colors">
                 <FaGithub size={20} />
               </div>
               <div>
@@ -97,19 +97,19 @@ const Contact = () => {
               </div>
             </a>
             <a
-              href="https://linkedin.com/in/nahidreza99"
+              href="https://www.linkedin.com/in/nahid-reza-953379209/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group"
             >
-              <div className="w-12 h-12 bg-black flex items-center justify-center rounded-full group-hover:bg-zinc-800 transition-colors">
+              <div className="w-12 h-12 bg-zinc-900/80 flex items-center justify-center rounded-full group-hover:bg-zinc-800/80 transition-colors">
                 <FaLinkedin size={20} />
               </div>
               <div>
                 <h3 className="text-sm uppercase tracking-wider text-gray-400">
                   LinkedIn
                 </h3>
-                <span className="text-white">linkedin.com/in/nahidreza99</span>
+                <span className="text-white">linkedin.com/in/nahid-reza-953379209</span>
               </div>
             </a>
           </motion.div>

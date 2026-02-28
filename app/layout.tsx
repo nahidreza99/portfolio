@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://portfolio-nine-rho-47.vercel.app/";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Nahid Reza | Full-Stack Engineer",
   description:
     "Portfolio of Nahid Reza - Full-Stack Engineer, Cloud & DevOps Specialist. Expertise in Django, FastAPI, Next.js, and Kubernetes.",
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
       >
         {children}
       </body>

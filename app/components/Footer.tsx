@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="py-8 px-4 bg-black border-t border-gray-800">
+    <footer className="py-8 px-4 bg-[#000613] border-t border-gray-800">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -33,7 +33,7 @@ const Footer = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/nahidreza99"
+              href="https://www.linkedin.com/in/nahid-reza-953379209/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"

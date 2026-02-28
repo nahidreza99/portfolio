@@ -5,14 +5,14 @@ import { Link as ScrollLink } from "react-scroll";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const navSections = [
-  { id: "whatido", label: "what i do" },
-  { id: "skills", label: "skills" },
   { id: "experience", label: "experience" },
+  { id: "work", label: "works" },
   { id: "projects", label: "projects" },
-  { id: "work", label: "work" },
   { id: "publications", label: "publications" },
+  { id: "skills", label: "technologies" },
 ];
 
 const Navbar = () => {
@@ -42,16 +42,19 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-black/80 backdrop-blur-lg shadow-lg"
+          ? "py-3 bg-[#000613] backdrop-blur-lg shadow-lg"
           : "py-5 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <NextLink
-          href="/"
-          className="font-mono font-bold text-xl cursor-pointer"
-        >
-          NR
+        <NextLink href="/" className="cursor-pointer flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Nahid Reza"
+            width={40}
+            height={40}
+            className="h-8 w-auto md:h-10"
+          />
         </NextLink>
 
         <div className="hidden md:flex space-x-8">
@@ -85,7 +88,7 @@ const Navbar = () => {
               >
                 {item.label}
               </NextLink>
-            )
+            ),
           )}
         </div>
 
@@ -96,14 +99,14 @@ const Navbar = () => {
             smooth={true}
             offset={-80}
             duration={500}
-            className="px-5 py-2 border border-white/30 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+            className="px-5 py-2 bg-white text-black rounded-full text-sm hover:bg-gray-200 transition-all duration-300 cursor-pointer"
           >
             Contact
           </ScrollLink>
         ) : (
           <NextLink
             href="/#contact"
-            className="px-5 py-2 border border-white/30 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300"
+            className="px-5 py-2 bg-white text-black rounded-full text-sm hover:bg-gray-200 transition-all duration-300"
           >
             Contact
           </NextLink>

@@ -81,8 +81,9 @@ const markdownComponents = {
   td: ({ children }: { children?: React.ReactNode }) => (
     <td className="py-3 px-4 text-gray-300">{children}</td>
   ),
-  img: ({ src, alt }: { src?: string | null; alt?: string | null }) => {
-    if (!src) return null;
+  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    const { src, alt } = props;
+    if (!src || typeof src !== "string") return null;
     return (
       <span className="block my-6 rounded-lg overflow-hidden border border-zinc-700">
         <Image
@@ -109,7 +110,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const { frontmatter, content } = work;
 
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="text-white min-h-screen">
       <Navbar />
       <article className="pt-28 pb-20 px-4 md:px-8">
         <div className="container mx-auto max-w-4xl">
@@ -134,7 +135,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {frontmatter.tech.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 bg-zinc-900 text-gray-300 text-sm rounded-full"
+                  className="px-3 py-1 bg-zinc-900/80 text-gray-300 text-sm rounded-full"
                 >
                   {t}
                 </span>

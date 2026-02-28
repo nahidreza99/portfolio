@@ -67,7 +67,7 @@ const Experience = () => {
       tech: "Next.js, Express.js, Strapi, PostgreSQL, Docker, Javascript",
       highlights: [
         "Built and deployed Next.js applications integrated with Strapi CMS, enabling clients to easily manage and scale dynamic content-driven websites.",
-        "Developed the backend infrastructure for an AI-powered storytelling mobile application for children, integrating natural language generation APIs and ensuring secure, scalable performance.",
+        "Developed backend infrastructure for a consumer mobile application, integrating third-party APIs and ensuring secure, scalable performance.",
         "Streamlined deployment via Docker + CI/CD pipelines",
       ],
     },
@@ -119,7 +119,7 @@ const Experience = () => {
               </div>
 
               <div>
-                <div className="mb-4 p-3 bg-zinc-900 rounded-md">
+                <div className="mb-4 p-3 bg-zinc-900/80 rounded-md">
                   <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-1">
                     Tech Stack
                   </h4>

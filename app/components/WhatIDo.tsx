@@ -16,7 +16,7 @@ const WhatIDo = () => {
     {
       icon: (
         <FaCode
-          size={42}
+          size={36}
           className="text-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
         />
       ),
@@ -35,7 +35,7 @@ const WhatIDo = () => {
     {
       icon: (
         <FaServer
-          size={42}
+          size={36}
           className="text-green-400 drop-shadow-[0_0_8px_rgba(74,222,128,0.5)]"
         />
       ),
@@ -55,7 +55,7 @@ const WhatIDo = () => {
     {
       icon: (
         <FaCloudUploadAlt
-          size={42}
+          size={36}
           className="text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
         />
       ),
@@ -75,7 +75,7 @@ const WhatIDo = () => {
     {
       icon: (
         <FaTasks
-          size={42}
+          size={36}
           className="text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]"
         />
       ),
@@ -95,7 +95,7 @@ const WhatIDo = () => {
   return (
     <section
       id="whatido"
-      className="py-20 md:py-28 px-4 md:px-8 bg-gradient-to-b from-black to-zinc-900"
+      className="py-20 md:py-28 px-4 md:px-8 bg-[#000613]"
     >
       <div className="container mx-auto">
         <motion.div
@@ -118,7 +118,7 @@ const WhatIDo = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
@@ -126,13 +126,13 @@ const WhatIDo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.7 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-black/60 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-zinc-800 hover:border-zinc-600 hover:shadow-lg hover:shadow-blue-900/10 transition-all hover:-translate-y-1"
+              className="bg-[#000613] backdrop-blur-sm p-5 md:p-6 rounded-xl border border-zinc-800 hover:border-zinc-600 hover:shadow-lg hover:shadow-blue-900/10 transition-all hover:-translate-y-1"
             >
-              <div className="mb-6 p-4 bg-gradient-to-br from-zinc-900 to-black rounded-full w-20 h-20 flex items-center justify-center">
+              <div className="mb-4 p-3 bg-[#000613] rounded-full w-16 h-16 flex items-center justify-center">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-300 mb-6">{service.description}</p>
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-gray-300 mb-4">{service.description}</p>
               <div className="flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <span

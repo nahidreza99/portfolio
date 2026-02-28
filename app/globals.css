@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #000613;
   --foreground: #ffffff;
-  --accent: #0070f3;
+  --accent: #354d5c;
   --primary: #0a0a0a;
   --secondary: #171717;
 }
@@ -64,7 +64,9 @@ body {
 .hidden-element {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .visible-element {
@@ -74,7 +76,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff, var(--accent), #a3a3a3);
+  background: linear-gradient(45deg, #8092a4, var(--accent), #a3a3a3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

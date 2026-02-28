@@ -14,7 +14,7 @@ export default async function WorkPage() {
   const works = await getAllWorks();
 
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="text-white min-h-screen">
       <Navbar />
       <section className="pt-28 pb-20 px-4 md:px-8">
         <div className="container mx-auto">
@@ -75,7 +75,7 @@ export default async function WorkPage() {
                       {work.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-3 py-1 bg-zinc-900 text-gray-300 text-sm rounded-full"
+                          className="px-3 py-1 bg-zinc-900/80 text-gray-300 text-sm rounded-full"
                         >
                           {t}
                         </span>

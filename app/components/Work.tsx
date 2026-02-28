@@ -20,7 +20,7 @@ const Work = ({ works }: WorkProps) => {
           viewport={{ once: true, amount: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Works</h2>
           <div className="w-20 h-1 bg-white mb-4"></div>
           <p className="text-gray-400 max-w-2xl">
             Selected case studies from professional engagements. Architecture,
@@ -36,7 +36,7 @@ const Work = ({ works }: WorkProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.7 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="p-6 md:p-8 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-zinc-600 transition-colors"
+              className="p-6 md:p-8 bg-zinc-900/80 rounded-xl border border-zinc-800 hover:border-zinc-600 transition-colors"
             >
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                 {work.thumbnail && (

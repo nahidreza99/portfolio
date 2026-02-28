@@ -65,20 +65,10 @@ const Hero = () => {
             transition={{ delay: 1.1, duration: 0.7 }}
             className="flex flex-col md:flex-row gap-4"
           >
-            <Link
-              to="projects"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="px-8 py-3 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition-colors text-center"
-            >
-              View Projects
-            </Link>
             <a
               href="/resume.pdf"
               download
-              className="px-8 py-3 border border-white/30 rounded-md font-medium hover:bg-white/10 transition-colors text-center"
+              className="px-8 py-3 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition-colors text-center"
             >
               Download Resume
             </a>
@@ -88,7 +78,7 @@ const Hero = () => {
               smooth={true}
               offset={-80}
               duration={800}
-              className="px-8 py-3 bg-black border border-white/30 rounded-md font-medium hover:bg-white/10 transition-colors text-center"
+              className="px-8 py-3 bg-transparent border border-white/30 rounded-md font-medium hover:bg-white/10 transition-colors text-center"
             >
               Contact Me
             </Link>
