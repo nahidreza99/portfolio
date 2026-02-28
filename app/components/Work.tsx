@@ -40,17 +40,17 @@ const Work = ({ works }: WorkProps) => {
             >
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                 {work.thumbnail && (
-                  <div className="md:w-48 shrink-0">
+                  <div className="md:w-96 shrink-0">
                     <Link
                       href={`/work/${work.slug}`}
-                      className="block relative w-full aspect-video md:aspect-square rounded-lg overflow-hidden bg-black/40"
+                      className="block relative w-full aspect-video rounded-lg overflow-hidden bg-black/40"
                     >
                       <Image
                         src={work.thumbnail}
                         alt={work.title}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 12rem"
+                        sizes="(max-width: 768px) 100vw, 24rem"
                       />
                     </Link>
                   </div>

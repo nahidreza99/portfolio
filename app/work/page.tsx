@@ -33,17 +33,17 @@ export default async function WorkPage() {
               >
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                   {work.thumbnail && (
-                    <div className="md:w-56 shrink-0">
+                    <div className="md:w-[27rem] shrink-0">
                       <Link
                         href={`/work/${work.slug}`}
-                        className="block relative w-full aspect-video md:aspect-square rounded-lg overflow-hidden bg-zinc-800"
+                        className="block relative w-full aspect-video rounded-lg overflow-hidden bg-zinc-800"
                       >
                         <Image
                           src={work.thumbnail}
                           alt={work.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 14rem"
+                          sizes="(max-width: 768px) 100vw, 27rem"
                         />
                       </Link>
                     </div>
